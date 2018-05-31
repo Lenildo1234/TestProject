@@ -1,0 +1,50 @@
+#Usuário VÁLIDO
+  Dado("que eu tenho um usuário") do |table|
+    @usuario = table.rows_hash['usuarioValido']
+    @senha = table.rows_hash['senhaValida']
+    visit('')
+    
+    #Anotações
+    #O Capybara utilizará a URL configurada no APP_HOST
+    #Caso seja necessário alterar o caminho basta inserir a pasta no método VISIT, por exemplo visit('/xbox/index.htm')
+    #Caso não seja necessário abrir o navegador, basta retirar o método VISIT
+  end
+  
+  Quando("eu faço login") do
+    #Utilizar uma tag do elemento q seja ÚNICA, por exemplo, o ID, caso contrário será necessário utilizar REGEX
+    fill_in 'txtUsuario', with: @usuario
+    fill_in 'txtsenha', with: @senha
+    #find(:css, 'input[value="Entrar"]').click
+    find('#btnLogin').click #forma resumida de utilizar o método FIND
+  end
+  
+  Então("o sistema deverá me redirecionar para a tela principal") do
+    expect(page).to have_current_path('http://projectpro.com.br/DefaultEproject.aspx', url: true)
+    #Criando variável para guardar o css da imagem do background
+    @background = find('#ucIndicativoLogin_ltrNomeUsuario') #forma resumida de utilizar o método FIND
+    expect(@background.text).to eql 'Olá Lenildo Nascimento da Silva'
+
+    #Anotações
+    #Metódo EXPECT do RSpec
+    #Utilizado para "ler" a página atual para encontrar os elementos especificados na chamada do método
+  end
+
+
+
+#Dentro do arquivo ENV.RB
+#Configuração do Chrome Driver
+Capybara.register_driver :selenium do |app|
+    Capybara::Selenium::Driver.new(
+        app,
+        browser: :chrome,
+        desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
+            'chromeOptions' => {'args' => ['--disable-inforbars', 
+                                           'windows-size=1600,1024']}
+        )
+    )
+
+end
+
+
+
+
