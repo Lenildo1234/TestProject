@@ -51,6 +51,5 @@ Antes de começarmos a automatizar os testes de aceitação, crie uma pasta no d
 
 ## CONFIGURANDO O PROJETO
 
-testes
 
 asdasdas
