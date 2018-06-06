@@ -14,6 +14,7 @@
 
 * Bundler: Gerenciador de pacotes do Ruby que utiliza como referência o arquivo Gemfile, ou seja, ele é o responsável por baixar e instalar as dependências do projeto descritas nesse arquivo.
 
+* Rspec: Framework de teste (BDD) baseado em Ruby.
 
 ## PREPARANDO O AMBIENTE
 
@@ -51,3 +52,11 @@ Antes de começarmos a automatizar os testes de aceitação, crie uma pasta no d
 
 ## CONFIGURANDO O PROJETO
 
+1. Para nosso primeiro testes, vamos definir primeiro nossas gemas, para isso, abra o arquivo Gemfile e insira as gemas e o local aonde serão baixadas:
+
+    * source 'http://rubygems.org'
+    * gem 'cucumber' #já baixamos anteriormente, porém, se houver alguma dependência o Bundler se encarregará de baixa-la
+    * gem 'capybara'
+    * gem 'selenium-webdriver'
+    * gem 'rspec'
+    

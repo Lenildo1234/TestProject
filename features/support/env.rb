@@ -12,7 +12,6 @@ World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
 
 
-
 Capybara.register_driver :headless_chrome do |app|
     Capybara::Selenium::Driver.new(
         app,
