@@ -1,9 +1,12 @@
+require '/home/peo_lsilva/Desktop/testes/support/env.rb'
+require '/home/peo_lsilva/Desktop/testes/support/hooks.rb'
+
 #Usuário Válido
 Dado("que eu tenho um usuário válido") do |table|
   @uVal = table.rows_hash['uVal']
   @sVal = table.rows_hash['sVal']
   visit('')
-  #sleep 90000
+  sleep 90000
 end
 
 Quando("eu preencher os campos: USUÁRIO e SENHA, com dados válidos") do
