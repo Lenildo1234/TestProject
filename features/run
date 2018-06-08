@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /home/peo_lsilva/Documents/uol/testes
+
+cucumber
