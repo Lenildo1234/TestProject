@@ -1,5 +1,5 @@
-require '/home/peo_lsilva/Desktop/testes/support/env.rb'
-require '/home/peo_lsilva/Desktop/testes/support/hooks.rb'
+require './support/env.rb'
+require './support/hooks.rb'
 
 #Usuário Inválido
 Dado("que eu tenho um usuário inválido") do |table|

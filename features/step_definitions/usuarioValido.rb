@@ -1,12 +1,11 @@
-require '/home/peo_lsilva/Desktop/testes/support/env.rb'
-require '/home/peo_lsilva/Desktop/testes/support/hooks.rb'
+require './support/env.rb'
+require './support/hooks.rb'
 
 #Usuário Válido
 Dado("que eu tenho um usuário válido") do |table|
   @uVal = table.rows_hash['uVal']
   @sVal = table.rows_hash['sVal']
   visit('')
-
 end
 
 Quando("eu preencher os campos: USUÁRIO e SENHA, com dados válidos") do
