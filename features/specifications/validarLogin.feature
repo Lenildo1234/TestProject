@@ -13,9 +13,10 @@ Cenário: Fazer login com usuário VÁLIDO
     Quando eu preencher os campos: USUÁRIO e SENHA, com dados válidos
     E eu clicar no botão ENTRAR
     Então o sistema deverá me redirecionar para a tela principal
+    Então screenshot usuario valido
 
 
-@ChecarPaginaLogin
+@screenshot
 Cenário: Fazer login com usuário INVÁLIDO
     Dado que eu tenho um usuário inválido 
         |uInv|lenildo.teste|
@@ -23,4 +24,6 @@ Cenário: Fazer login com usuário INVÁLIDO
     Quando eu preencher os campos: USUÁRIO e SENHA, com os dados inválidos
     E clicar novamente no botão ENTRAR
     Então o sistema deverá exibir uma mensagem de erro
+    Então screenshot usuario invalido
+    
  

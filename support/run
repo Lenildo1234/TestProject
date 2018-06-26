@@ -1,5 +1,9 @@
 #!/bin/bash
 
-cd /home/peo_lsilva/Documents/uol/testes
+cd /home/peo_lsilva/Documents/uol/testes/support
+
+ruby createFolders.rb
+
+cd ..
 
 cucumber

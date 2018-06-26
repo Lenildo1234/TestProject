@@ -6,7 +6,6 @@ Dado("que eu tenho um usuário inválido") do |table|
     @uInv = table.rows_hash['uInv']
     @sInv = table.rows_hash['sInv']
     visit('')
-    sleep 10000
   end
   
   Quando("eu preencher os campos: USUÁRIO e SENHA, com os dados inválidos") do
@@ -22,4 +21,7 @@ Dado("que eu tenho um usuário inválido") do |table|
     @lblError = find('#lblError')
     expect(@lblError.text).to eql 'Usuário ou senha inválidos.'
   end
-  
+
+  Então("screenshot usuario invalido") do
+    page.save_screenshot('usuario_INVALIDO_'+Time.now.strftime("%d-%m-%Y %H:%M:%S")+'.png') #comando pré-definido do cucumber | Time.now.strftime("%d-%m-%Y %H:%M")
+  end
