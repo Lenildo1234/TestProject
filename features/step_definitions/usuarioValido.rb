@@ -5,7 +5,7 @@ require './support/hooks.rb'
 Dado("que eu tenho um usuário válido") do |table|
   @uVal = table.rows_hash['uVal']
   @sVal = table.rows_hash['sVal']
-  visit('')
+  visit('http://projectpro.com.br/eproject.aspx')
 end
 
 Quando("eu preencher os campos: USUÁRIO e SENHA, com dados válidos") do

@@ -3,7 +3,7 @@ require 'capybara/dsl'
 require 'capybara/rspec/matchers'
 require 'selenium/webdriver'
 require 'rspec'
-require 'allure-rspec'
+
 
 d = Time.now.strftime("%d") #dia
 m = Time.now.strftime("%b") #mês (nome)
@@ -32,6 +32,5 @@ end
 Capybara.configure do |config|
     config.default_driver = :selenium
     config.default_max_wait_time = 30
-    config.app_host = 'http://projectpro.com.br/eproject.aspx'
-    config.save_path = (path = "./screenshots/"+y+'/'+m+'/'+d)
+    config.save_path = (path = './screenshots/'+y+'/'+m+'/'+d)
 end
