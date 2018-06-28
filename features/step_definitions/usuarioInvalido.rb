@@ -25,6 +25,6 @@ Então("o sistema deverá exibir uma mensagem de erro") do
   expect(@lblError.text).to eql 'Usuário ou senha inválidos.'
 end
 
-Então("screenshot usuario invalido") do
-  page.save_screenshot('usuario_INVALIDO_'+Time.now.strftime("%d-%m-%Y %H:%M:%S")+'.png') #comando pré-definido do cucumber | Time.now.strftime("%d-%m-%Y %H:%M")
-end
+# Então("screenshot usuario invalido") do
+#   page.save_screenshot('usuario_INVALIDO_'+Time.now.strftime("%d-%m-%Y %H:%M:%S")+'.png') #comando pré-definido do cucumber | Time.now.strftime("%d-%m-%Y %H:%M")
+# end

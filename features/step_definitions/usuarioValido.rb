@@ -24,6 +24,6 @@ Então("o sistema deverá me redirecionar para a tela principal") do
   expect(@usrLogado.text).to eql 'Olá Lenildo Nascimento da Silva'
 end
 
-Então("screenshot usuario valido") do
-  page.save_screenshot('usuario_VALIDO_'+Time.now.strftime("%d-%m-%Y %H:%M:%S")+'.png') #comando pré-definido do cucumber | Time.now.strftime("%d-%m-%Y %H:%M")
-end
+# Então("screenshot usuario valido") do
+#   page.save_screenshot('usuario_VALIDO_'+Time.now.strftime("%d-%m-%Y %H:%M:%S")+'.png') #comando pré-definido do cucumber | Time.now.strftime("%d-%m-%Y %H:%M")
+# end
