@@ -27,7 +27,7 @@ Capybara.register_driver :chrome do |app|
     )
 end
 
-#Configuração do Driver
+#Configuração do Capybara
 Capybara.configure do |config|
     config.default_driver = :chrome
     config.default_max_wait_time = 30
