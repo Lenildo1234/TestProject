@@ -1,7 +1,7 @@
 require 'capybara'
 require 'capybara/dsl'
 require 'capybara/rspec/matchers'
-require 'selenium/webdriver'
+require 'selenium-webdriver'
 require 'rspec'
 
 
@@ -14,24 +14,22 @@ y = Time.now.strftime("%Y") #ano
 World(Capybara::DSL)
 World(Capybara::RSpecMatchers)
 
-#Configuração do Chrome Driver
-Capybara.register_driver :selenium do |app|
-    mobile_emulation = { "deviceName" => "iPad" }
-    Capybara::Selenium::Driver.new(
-        app,
-        browser: :chrome,
-        args: ['headless']
-        # desired_capabilities: Selenium::WebDriver::Remote::Capabilities.chrome(
-        #     'chromeOptions' => {
-        #         #'mobileEmulation' => mobile_emulation,
-        #         'args' => ['--window-size=1240,1200']# --headless | --window-size=1240,1200
-        #     }
-        # )  
+#Configuração do Navegador
+Capybara.register_driver :chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new
+    options.add_argument("start-maximized")
+    #options.add_emulation(device_name: 'iPhone 6')
+  
+    Capybara::Selenium::Driver.new(app,
+      browser: :chrome,
+      options: options,
+      driver_path: './browserDriver/chromedriver'
     )
 end
 
+#Configuração do Driver
 Capybara.configure do |config|
-    config.default_driver = :selenium
+    config.default_driver = :chrome
     config.default_max_wait_time = 30
     #config.save_path = (path = './screenshots/'+y+'/'+m+'/'+d)
 end

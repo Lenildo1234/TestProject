@@ -15,8 +15,7 @@ Cenário: Fazer login com usuário VÁLIDO
     Então o sistema deverá me redirecionar para a tela principal
     
 
-
-@screenshot
+@ChecarPaginaLogin
 Cenário: Fazer login com usuário INVÁLIDO
     Dado que eu tenho um usuário inválido 
         |uInv|lenildo.teste|
