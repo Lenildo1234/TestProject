@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/peo_lsilva/Documents/uol/testes/support
+cd ../../testes/support
 
 ruby createFolders.rb
 

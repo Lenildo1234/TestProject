@@ -14,6 +14,7 @@ Cenário: Fazer login com usuário VÁLIDO
     E eu clicar no botão ENTRAR
     Então o sistema deverá me redirecionar para a tela principal
     
+    
 
 @ChecarPaginaLogin
 Cenário: Fazer login com usuário INVÁLIDO
@@ -23,6 +24,7 @@ Cenário: Fazer login com usuário INVÁLIDO
     Quando eu preencher os campos: USUÁRIO e SENHA, com os dados inválidos
     E clicar novamente no botão ENTRAR
     Então o sistema deverá exibir uma mensagem de erro
+    
     
     
  
